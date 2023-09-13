@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Return Book</h2>
+  <form method="post">
+    {% csrf_token %}
+    <p>Book: {{ transaction.book.title }} by {{ transaction.book.author }}</p>
+    <p>Member: {{ transaction.member.name }}</p>
+    <label for="fee">Late Fee (Rs.):</label>
+    <input type="number" name="fee" id="fee" value="{{ transaction.fee }}">
+    <br>
+    <button type="submit">Return</button>
+  </form>
+  <a href="{% url 'book_list' %}">Back to Book List</a>
+{% endblock %}

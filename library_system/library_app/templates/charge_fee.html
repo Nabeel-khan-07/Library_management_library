@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Charge Fee</h2>
+  <form method="post">
+    {% csrf_token %}
+    <p>Member: {{ member.name }}</p>
+    <label for="fee">Fee (Rs.):</label>
+    <input type="number" name="fee" id="fee">
+    <br>
+    <button type="submit">Charge</button>
+  </form>
+  <a href="{% url 'book_list' %}">Back to Book List</a>
+{% endblock %}

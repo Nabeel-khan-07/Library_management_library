@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Import Error</h2>
+  <p>An error occurred during the import process. Please check your CSV file and try again.</p>
+  <a href="{% url 'import_books' %}">Try Again</a>
+  <a href="{% url 'book_list' %}">Back to Book List</a>
+{% endblock %}
